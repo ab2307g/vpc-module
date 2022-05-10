@@ -87,7 +87,7 @@ resource "aws_subnet" "appsubnet2" {
 
 resource "aws_subnet" "dbsubnet1" {
    vpc_id =  aws_vpc.Main.id
-   cidr_block = "${var.app_subnet1_cidr}"          
+   cidr_block = "${var.db_subnet1_cidr}"          
    availability_zone = data.aws_availability_zones.available.names[0]
    map_public_ip_on_launch = false
    tags = {
@@ -101,7 +101,7 @@ resource "aws_subnet" "dbsubnet1" {
 
 resource "aws_subnet" "dbsubnet2" {
    vpc_id =  aws_vpc.Main.id
-   cidr_block = "${var.app_subnet2_cidr}"
+   cidr_block = "${var.db_subnet2_cidr}"
    availability_zone = data.aws_availability_zones.available.names[1]
    map_public_ip_on_launch = false
    tags = {
